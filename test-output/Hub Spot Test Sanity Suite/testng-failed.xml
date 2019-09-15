@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [Hub Spot Test Sanity Suite]">
+  <listeners>
+    <listener class-name="com.qa.hubspot.listeners.ExtentReportListener"/>
+    <listener class-name="com.qa.hubspot.listeners.AllureReportListener"/>
+  </listeners>
   <test thread-count="5" verbose="5" name="hub spot Sanity Test(failed)">
     <classes>
       <class name="com.qa.hubspot.tests.HomePageTest">
         <methods>
-          <include name="verifyLoggedInUserAccountTest"/>
           <include name="tearDown"/>
+          <include name="verifyHomePageHeaderTest"/>
           <include name="verifyHomePageTitleTest"/>
           <include name="setUp"/>
         </methods>
